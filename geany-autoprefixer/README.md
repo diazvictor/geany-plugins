@@ -1,8 +1,8 @@
-# Geany Prefixr (BETA)
+# Geany Autoprefixer (BETA)
 
 > Geany plugin to prefix your CSS, LESS or SCSS
 
-![screenshot](screenshot.gif "Autoprexfixer CSS")
+![screenshot](screenshot.gif)
 
 ### Requirements
 

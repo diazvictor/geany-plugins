@@ -1,6 +1,6 @@
 --[[!
  @package   GeanyPluginsLua
- @filename  advance-new-file.lua
+ @filename  advance-new-file/advance-new-file.lua
  @version   2.0
  @autor     Díaz Urbaneja Víctor Eduardo Diex <diaz.victor@openmailbox.org>
  @date      03.07.2018 02:33:31 -04
