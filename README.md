@@ -24,6 +24,10 @@
 
 GPL-3 <https://www.gnu.org/licenses/gpl-3.0.html>
 
+### NOTE
+
+the comments were in Spanish but I translated them into English
+
 #### Version
 
 2.5
