@@ -24,6 +24,7 @@ cmt-section:Section comment block + `<Control><Shift>e`
 ```
 
 Section Header
+
 cmt-section-header:Section comment block + `<Control><Shift>e`
 
 ```lua
@@ -33,13 +34,15 @@ cmt-section-header:Section comment block + `<Control><Shift>e`
 ```
 
 Section Footer
+
 cmt-section-footer:Section comment block + `<Control><Shift>e`
 
 ```lua
-/*=====  End of Section comment block  ======*/
+-- ======  End of Section comment block  ======
 ```
 
 Simple Comment
+
 cmt:Comment + `<Control><Shift>e`
 
 ```lua
@@ -47,6 +50,7 @@ cmt:Comment + `<Control><Shift>e`
 ```
 
 Block Comment
+
 cmt-block:Block Comment + <Control><Shift>e
 
 ```lua
@@ -58,6 +62,7 @@ cmt-block:Block Comment + <Control><Shift>e
 ```
 
 Todo Comment
+
 cmt-todo:some fixes are still missing with the plugin + <Control><Shift>e
 
 ```lua
@@ -65,14 +70,15 @@ cmt-todo:some fixes are still missing with the plugin + <Control><Shift>e
 ```
 
 Head Comment
+
 cmt-head:Mypackage + <Control><Shift>e
 
 ```
 --[[
  @package   Mypackage
  @filename  here the name of the file where I'm creating the snippet 
- @version   1.0
- @author    Díaz Urbaneja Víctor Eduardo Diex <diaz.victor@openmailbox.org>
- @date      11.07.2018 04:38:54 -04
+ @version   
+ @author    here the name of the developer I have in Edit->Preferences->Template <here the email I have in Edit->Preferences->Template>
+ @date      Here's the date and time he created the snippet.
 ]]--
 ```
