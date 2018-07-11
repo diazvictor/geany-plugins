@@ -1,59 +1,102 @@
 --[[!
  @package   GeanyPluginsLua
  @filename  advanced-new-file/advanced-new-file.lua
- @version   2.0
- @autor     Díaz Urbaneja Víctor Eduardo Diex <diaz.victor@openmailbox.org>
- @date      03.07.2018 02:33:31 -04
+ @version   2.3
+ @author    Díaz Urbaneja Víctor Eduardo Diex <diaz.victor@openmailbox.org>
+ @date      10.07.2018 23:49:31 -04
 ]]--
 
--- pulled from, https://stackoverflow.com/questions/295052/how-can-i-determine-the-os-of-the-system-from-within-a-lua-script#14425862
-function os.capture(cmd, raw)
-	local f = assert(io.popen(cmd, 'r'))
-	local s = assert(f:read('*a'))
-	f:close()
-	if raw then return s end
-	s = string.gsub(s, '^%s+', '')
-	s = string.gsub(s, '%s+$', '')
-	s = string.gsub(s, '[\n\r]+', ' ')
-	return s
+-- -------------------------------------------------------------
+-- Variables
+-- -------------------------------------------------------------
+
+local file_path = geany.fileinfo().path
+local dlg       = dialog.new("", {"_Acept", "Canc_el"})
+local DS        = geany.dirsep
+
+-- -------------------------------------------------------------
+-- Functions
+-- -------------------------------------------------------------
+
+dlg:label("  Enter a path for a new folder")
+dlg:text("input", nil, "")
+acept, result = dlg:run()
+
+-- I detect the operating system
+local OS = nil
+
+if (DS == "/") then
+	OS = 'Unix'
+elseif (DS == "\\") then
+	OS = 'Windows'
 end
 
-function get_os()
-	local cmd = os.capture('uname')
-	return cmd
-end
-
-local DS  = geany.dirsep
-local OS  = get_os()
-
-file_path = geany.fileinfo().path
-buttons   = {"_Acept", "Canc_el"}
-dlg       = dialog.new("", buttons)
-
-dlg:label("   Enter a path for a new folder")
-dlg:text("input", "","")
-
-button, result = dlg:run()
-
-if (button == 1) then
-	if OS == 'Linux' or OS == 'Darwin' then
-		local dir  = file_path..result.input:match('^.+/')
-		local file = file_path..result.input
-		-- Create Directory
-		geany.launch("mkdir","-p",dir)
-		if (dir ~= file)  then
-			-- Create file
-			-- @TODO : at the moment I can't create a single file, I must pass the path , example: css/style.css
-			geany.launch("touch",file)
-			-- Open file
-			-- @TODO : I can open the file but sometimes it doesn't open it, then I'll arrange this
-			-- geany.open(file)
-		end
-	elseif OS == 'Windows' then
-		geany.message("Not Support yet")
-		-- Create Directory
-		-- geany.launch("mkdir",dir)
-	else
-		geany.message("This system is not supported yet\nif you dislike this you can contribute to the project")
+-- Detects if the file exists
+local function file_exist(file)
+	--return (io.open(file, "r") == nil) and false or true
+	local file_found = io.open(file, "r")
+	if (file_found == nil) then
+		return false
 	end
+	return true
+end
+
+-- I create the file
+local function create_file()
+
+	if (OS == 'Unix') then
+		file = file_path..result.input -- everything I write into the input
+	elseif (OS == 'Windows') then
+		file = file_path..result.input:gsub('/','\\')
+	end
+	
+	-- return true only if it is a file
+	local function is_file(f)
+		local dir 	= f:match("^.*/")
+		if (OS == 'Windows') then
+			dir = dir:gsub('/','\\')
+		end
+		return (f ~= dir)
+	end
+	
+	-- I create the file
+	if ( is_file(file) ) then
+		-- there are three ways to create the files
+		if (file_exist(file) == false) then
+			-- First way, create file using a Unix Command
+			--geany.launch('touch',file)
+			
+			-- Second way, create a file using the Lua functions
+			-- local d = io.open(file,"w+") -- I create the file
+			-- d:read('*all') --abro el file
+			-- d:close() --cierro el file
+			
+			-- Third way, creating a file using Geany functions
+			geany.newfile(file)
+			geany.open(file) -- I open the file with geany.
+			geany.save(file)
+		else
+			geany.message('The file exists')
+		end
+	end
+
+end
+
+-- I create the directory
+local function create_dir()
+	if result.input then
+		local input = file_path..result.input
+		dir         = input:match("^.*/") -- I'm just looking for what's behind the slash.
+		if (OS == 'Unix') then
+			geany.launch("mkdir", "-p", dir)
+		elseif (OS == 'Windows') then
+			dir = dir:gsub('/','\\')
+			geany.launch("mkdir", dir)
+		end
+	end
+end
+
+if (acept == 1) then
+	create_dir()
+	create_file()
 end
