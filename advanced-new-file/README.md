@@ -1,4 +1,4 @@
-# Geany AdvancedNewFile (BETA)
+# Geany AdvancedNewFile (ALPHA)
 
 > File creation plugin for Geany
 
