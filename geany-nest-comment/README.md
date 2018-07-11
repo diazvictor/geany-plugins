@@ -24,6 +24,7 @@ cmt-section:Section comment block + `<Control><Shift>e`
 ```
 
 Section Header
+
 cmt-section-header:Section comment block + `<Control><Shift>e`
 
 ```lua
@@ -33,13 +34,15 @@ cmt-section-header:Section comment block + `<Control><Shift>e`
 ```
 
 Section Footer
+
 cmt-section-footer:Section comment block + `<Control><Shift>e`
 
 ```lua
-/*=====  End of Section comment block  ======*/
+-- ======  End of Section comment block  ======
 ```
 
 Simple Comment
+
 cmt:Comment + `<Control><Shift>e`
 
 ```lua
@@ -47,6 +50,7 @@ cmt:Comment + `<Control><Shift>e`
 ```
 
 Block Comment
+
 cmt-block:Block Comment + <Control><Shift>e
 
 ```lua
@@ -58,6 +62,7 @@ cmt-block:Block Comment + <Control><Shift>e
 ```
 
 Todo Comment
+
 cmt-todo:some fixes are still missing with the plugin + <Control><Shift>e
 
 ```lua
@@ -65,6 +70,7 @@ cmt-todo:some fixes are still missing with the plugin + <Control><Shift>e
 ```
 
 Head Comment
+
 cmt-head:Mypackage + <Control><Shift>e
 
 ```
