@@ -5,7 +5,9 @@
 ### NOTE
 
 the comment will be made after writing some text after the colon
+
 you must select the snippet text
+
 example, the color will indicate that the snippet is selected. `cmt-section:Example`
 
 add a key combination
@@ -53,11 +55,7 @@ cmt:Comment + `<Control><Shift>e`
 
 Block Comment
 
-<<<<<<< HEAD
 cmt-block:Block Comment + `<Control><Shift>e`
-=======
-cmt-block:Block Comment + <Control><Shift>e
->>>>>>> 9ba705d41c2f6df4eb72334890d29bf641e42b89
 
 ```lua
 --[[
@@ -69,22 +67,13 @@ cmt-block:Block Comment + <Control><Shift>e
 
 Todo Comment
 
-<<<<<<< HEAD
 cmt-todo:some fixes are still missing with the plugin + `<Control><Shift>e`
-=======
-cmt-todo:some fixes are still missing with the plugin + <Control><Shift>e
->>>>>>> 9ba705d41c2f6df4eb72334890d29bf641e42b89
 
 ```lua
 -- @TODO : some fixes are still missing with the plugin
 ```
 
 Head Comment
-<<<<<<< HEAD
-=======
-
-cmt-head:Mypackage + <Control><Shift>e
->>>>>>> 9ba705d41c2f6df4eb72334890d29bf641e42b89
 
 cmt-head:Mypackage + `<Control><Shift>e`
 
@@ -97,3 +86,4 @@ cmt-head:Mypackage + `<Control><Shift>e`
  @date      Here's the date and time he created the snippet.
 ]]--
 ```
+
