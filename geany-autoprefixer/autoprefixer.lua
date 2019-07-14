@@ -1,6 +1,6 @@
 --[[!
- @package   GeanyPluginsLua
- @filename  geany-autoprefixer/autoprefixer.lua
+ @package   Geany plugins lua
+ @filename  geany-autoprefixer-css/autoprefixer.lua
  @version   2.5
  @autor     Díaz Urbaneja Víctor Eduardo Diex <diaz.victor@openmailbox.org>
  @date      27.06.2018 17:43:13 -04
