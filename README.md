@@ -1,22 +1,22 @@
-# GeanyPluginsLua
+# Geany plugins lua
 
 > Collection of Plugins made for the purpose of making Geany more extensible
 
 ### Requirements
 
-[Geanylua](https://github.com/geany/geany-plugins/tree/master/geanylua)
+[geanylua](https://github.com/geany/geany-plugins/tree/master/geanylua)
 
-### How to assign keystrokes to plugins
+### How to assign key combinations to plugins
 
 *Edit->Preferences->Keybindings*
 
 ![](screenshot.png)
 
-### Install
+### How to install
 
-`git clone https://github.com/diazvictor/GeanyPluginsLua.git $HOME/.config/geany/plugins/geanylua/`
+`git clone https://github.com/diazvictor/geany-plugins-lua.git $HOME/.config/geany/plugins/geanylua/`
 
-`cd $HOME/.config/geany/plugins/geanylua/GeanyPluginsLua`
+`cd $HOME/.config/geany/plugins/geanylua/geany-plugins-lua`
 
 `mv hotkeys.cfg ../`
 
@@ -24,7 +24,7 @@
 
 GPL-3 <https://www.gnu.org/licenses/gpl-3.0.html>
 
-### NOTE
+### Note
 
 the comments were in Spanish but I translated them into English
 
