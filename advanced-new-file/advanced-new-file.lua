@@ -1,6 +1,6 @@
 --[[!
- @package   GeanyPluginsLua
- @filename  advanced-new-file/advanced-new-file.lua
+ @package   Geany plugins lua
+ @filename  geany-advanced-new-file/advanced-new-file.lua
  @version   2.3
  @author    Díaz Urbaneja Víctor Eduardo Diex <diaz.victor@openmailbox.org>
  @date      10.07.2018 23:49:31 -04

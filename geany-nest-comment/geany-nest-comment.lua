@@ -1,5 +1,5 @@
 --[[!
-@package   GeanyPluginsLua
+@package   Geany plugins lua
 @filename  geany-nest-comment/nest-comment.lua
 @version   1.0
 @autor     Díaz Urbaneja Víctor Eduardo Diex <diaz.victor@openmailbox.org>
