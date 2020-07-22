@@ -1,4 +1,4 @@
-# GeanyNestComment (BETA)
+# Nest Comment
 
 > For languages supporting C-Style comments: HTML, CSS, PHP,LUA
 
