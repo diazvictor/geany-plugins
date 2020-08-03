@@ -1,17 +1,15 @@
 --[[--
  @package   Geany plugins lua
- @filename  configure.lua
- @version   1.0
+ @filename  nest-comment/configure.lua
+ @version   3.0
  @author    Díaz Urbaneja Víctor Eduardo Diex <victor.vector008@gmail.com>
- @date      22.07.2020 18:01:50 -04
+ @date      03.08.2020 14:00:48
 ]]
 
 local ds = geany.dirsep
-local config_dir = geany.appinfo().configdir .. ds .. 'plugins' .. ds .. 'geany-nest-comment' .. ds
-filename = config_dir .. 'config.lua'
+local config_dir = geany.appinfo().scriptdir .. ds .. 'support' .. ds .. 'nest-comment' .. ds
 
-sample = [[
-return {
+local sample = [[return {
 	['.css'] = {
 		['cmt'] = ('/** %s **/'):format(value),
 		['cmt-long'] = ('/**\n * %s\n */'):format(value),
@@ -51,11 +49,23 @@ return {
 }
 ]]
 
-if geany.fullpath(filename) then
-	geany.open(filename)
+local file_exist = function (file)
+	local file_found = io.open(file, "r")
+	if (file_found == nil) then
+		return false
+	end
+	return true
+end
+local fileconf = config_dir .. 'config.lua'
+
+if geany.fullpath(fileconf) then
+	geany.open(fileconf)
 else
-	geany.newfile(filename)
-	geany.open(filename)
+	if file_exist(config_dir) == false then
+		os.execute('mkdir -p ' .. config_dir)
+	end
+	geany.newfile(fileconf)
+	geany.open(fileconf)
 	geany.text(sample)
-	geany.save(filename)
+	geany.save(fileconf)
 end
