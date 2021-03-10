@@ -2,20 +2,21 @@
 
 > File creation plugin for Geany
 
-![screenshot](screenshot.png "AdvanceNewFile")
+![screenshot](screenshot.png "Geany AdvanceNewFile")
 
-### Requirements
+## Dependencies
 
 [geanylua](https://github.com/geany/geany-plugins/tree/master/geanylua)
 
-### License
+## Features
 
-GPL-3 <https://www.gnu.org/licenses/gpl-3.0.html>
+* Create new directories while creating a new file
+* Create a directory instead of a file by suffixing the file path with `/` as in `somedirectory/` to create the directory
 
-### Note
+## Version
 
-Based on AdvanceNewFile from SublimeText
+2.4
 
-#### Version
+## License
 
-2.0
+[zlib license](https://github.com/diazvictor/geany-plugins/blob/master/LICENSE.md)
